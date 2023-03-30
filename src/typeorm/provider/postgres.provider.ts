@@ -2,8 +2,8 @@ import { FactoryProvider } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { DataSource } from 'typeorm';
 
-import { IAppConfiguration } from '../../config/app-configuration.interface';
-import { POSTGRES_DATA_SOURCE } from '../../common/constants';
+import { IAppConfiguration } from '@config/app-configuration.interface';
+import { POSTGRES_DATA_SOURCE } from '@common/constants';
 import * as entities from '../entitiy';
 
 const entityResolver = () => Object.values(entities);

@@ -1,4 +1,4 @@
-import { UserEntity } from '../../../typeorm/entitiy';
+import { UserEntity } from '@typeorm/entitiy';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class UserModel implements UserEntity {

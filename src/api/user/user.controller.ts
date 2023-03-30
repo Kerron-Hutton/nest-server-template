@@ -1,10 +1,12 @@
 import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
-import { UserService } from './user.service';
+
+import { PaginationRequestQueryDto } from '@common/dto/pagination-request-query.dto';
+import { FindByIdParamDto } from '@common/dto/find-by-id-param.dto';
+
 import * as apiDoc from './swagger/user-controller.swagger';
-import { FindByIdParamDto } from '../../common/dto/find-by-id-param.dto';
-import { PaginationRequestQueryDto } from '../../common/dto/pagination-request-query.dto';
-import { UserModel } from './model/user.model';
 import { RegisterUserDto } from './dto/register-user.dto';
+import { UserModel } from './model/user.model';
+import { UserService } from './user.service';
 
 import {
   ApiBadRequestResponse,
@@ -18,7 +20,7 @@ import {
   ApiOkPaginationResponse,
   ValidationBadRequest,
   ApiCreateResponse,
-} from '../../common/common-api-doc.swagger';
+} from '@common/common-api-doc.swagger';
 
 @ApiTags('user')
 @Controller('user')

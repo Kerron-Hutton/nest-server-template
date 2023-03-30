@@ -3,7 +3,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 
-import { IAppConfiguration } from './config/app-configuration.interface';
+import { IAppConfiguration } from '@config/app-configuration.interface';
 import { AppModule } from './app.module';
 
 (async () => {

@@ -1,14 +1,15 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 
-import { FindByIdParamDto } from '../../common/dto/find-by-id-param.dto';
-import { USER_REPOSITORY } from '../../common/constants';
-import { UserEntity } from '../../typeorm/entitiy';
-import { PaginationRequestQueryDto } from '../../common/dto/pagination-request-query.dto';
-import { PaginatedResultModel } from '../../common/model/paginated-result.model';
-import { UserModel } from './model/user.model';
+import { PaginationRequestQueryDto } from '@common/dto/pagination-request-query.dto';
+import { ApiCreateResponseModel } from '@common/model/api-create-response.model';
+import { PaginatedResultModel } from '@common/model/paginated-result.model';
+import { FindByIdParamDto } from '@common/dto/find-by-id-param.dto';
+import { USER_REPOSITORY } from '@common/constants';
+import { UserEntity } from '@typeorm/entitiy';
+
 import { RegisterUserDto } from './dto/register-user.dto';
-import { ApiCreateResponseModel } from '../../common/model/api-create-response.model';
+import { UserModel } from './model/user.model';
 
 @Injectable()
 export class UserService {
