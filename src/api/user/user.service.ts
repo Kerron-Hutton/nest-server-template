@@ -7,6 +7,8 @@ import { UserEntity } from '../../typeorm/entitiy';
 import { PaginationRequestQueryDto } from '../../common/dto/pagination-request-query.dto';
 import { PaginatedResultModel } from '../../common/model/paginated-result.model';
 import { UserModel } from './model/user.model';
+import { RegisterUserDto } from './dto/register-user.dto';
+import { ApiCreateResponseModel } from '../../common/model/api-create-response.model';
 
 @Injectable()
 export class UserService {
@@ -44,5 +46,10 @@ export class UserService {
 
   async findById(param: FindByIdParamDto) {
     return this.userRepository.findOneBy({ id: param.id });
+  }
+
+  async registerUser(param: RegisterUserDto) {
+    const { id } = await this.userRepository.save(param);
+    return { id } as ApiCreateResponseModel;
   }
 }
